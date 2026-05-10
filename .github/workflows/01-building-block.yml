@@ -1,0 +1,15 @@
+name: 01 - Building Block of GitHub Action
+on: push
+# here even though we have defined 2 jobs but they will run in parallel because we haven't defined any dependency between them
+# the job will run in different runner of same type(ubuntu-latest) and they will run in parallel by default but we can define the dependency between the jobs and make them run in sequential order
+jobs:
+  my-first-job:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Say Hello
+          run : echo "Hello World"
+  my-second-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Bye
+        run : echo "Bye World"
